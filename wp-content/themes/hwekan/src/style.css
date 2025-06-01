@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
+@import "tailwindcss";
+@import "./theme.css";
+@import "./navigation.css";
+
+body {
+  width: 100vw;
+  height: 100dvh;
+  font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+  background-color: black;
+  @apply text-white;
+}
+
+body:has(#menu:checked) {
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  @apply px-4 xl:px-0;
+}
+
+img {
+  object-fit: cover;
+}
+
+section {
+  max-width: 100dvw;
+}
+
+svg {
+  cursor: pointer;
+}
+
+.section-title {
+  font-size: 32px;
+  @apply font-bold;
+}
+.gradient {
+  background: linear-gradient(180deg, #191100 0%, rgba(9, 10, 17, 0) 100%);
+}
