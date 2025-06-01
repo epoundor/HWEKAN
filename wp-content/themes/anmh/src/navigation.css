@@ -1,0 +1,84 @@
+
+.header-nav {
+  .menu-item-has-children:hover .sub-menu > li {
+    padding: 16px;
+    cursor: pointer;
+    @apply hover:bg-gray-100 rounded-lg;
+  }
+
+  li {
+    list-style-type: none;
+  }
+  .menu-item-has-children:hover .sub-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 16px;
+    z-index: 999;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px 0px #00000026;
+    width: max-content;
+    top: 100%;
+  }
+
+  .menu-item-has-children {
+    position: relative;
+    cursor: pointer;
+  }
+  .menu-item-has-children > a {
+    @apply pointer-events-none flex justify-between items-center gap-2.5;
+  }
+
+  .current-menu-item,
+  .current-page-ancestor {
+    @apply bg-gray-100 rounded-lg;
+  }
+  .menu-item-has-children .sub-menu {
+    display: none;
+    position: absolute;
+  }
+  .menu-item{
+    font-size: 15px;
+    @apply hover:bg-gray-50
+  }
+}
+
+.menu-burger {
+  a {
+    @apply px-5 flex-1 font-semibold block text-base;
+  }
+  .menu-item-has-children .sub-menu:not(.show) {
+    display: none;
+  }
+  .menu-item-has-children > a {
+    @apply pointer-events-none flex justify-between items-center;
+  }
+  li.menu-item-has-children {
+    @apply cursor-pointer;
+  }
+  .arrow{
+    @apply w-3 h-1.5;
+  }
+  .show.sub-menu{
+    @apply flex flex-col transition-discrete duration-300 ease-in-out;
+  }
+  li {
+    list-style-type: none;
+  }
+}
+.menu-item {
+  @apply py-2.5 px-4 font-semibold md:text-base;
+}
+
+.about-menu > .menu-item {
+  @apply p-4 font-semibold border-b-2 border-transparent;
+}
+
+.about-menu > .current-menu-item {
+  @apply bg-transparent border-black rounded-none;
+}
+
+.footer-nav .current-menu-item,
+.footer-nav .current-page-ancestor {
+  @apply bg-transparent rounded-none;
+}
