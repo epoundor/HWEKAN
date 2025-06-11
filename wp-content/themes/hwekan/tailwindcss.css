@@ -1074,6 +1074,11 @@
       gap: calc(var(--spacing) * 20);
     }
   }
+  .lg\:gap-25 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 25);
+    }
+  }
   .lg\:p-11\.5 {
     @media (width >= 64rem) {
       padding: calc(var(--spacing) * 11.5);
@@ -1092,6 +1097,11 @@
   .lg\:py-13\.5 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 13.5);
+    }
+  }
+  .lg\:py-25 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 25);
     }
   }
   .lg\:pt-0 {

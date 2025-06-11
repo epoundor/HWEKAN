@@ -88,7 +88,7 @@ function show_cpt()
         </div>
     </div>
 </section>
-<section class="container flex flex-col gap-8 py-12.5 lg:py-13.5" data-aos="fade-up">
+<section class="container flex flex-col gap-8 py-12.5 lg:py-25" data-aos="fade-up">
     <b class="section-title">Qui nous sommes ? Ce que nous faisons...</b>
 
     <div class="flex flex-col lg:flex-row lg:gap-12.5 gap-4 items-center">
@@ -103,7 +103,7 @@ function show_cpt()
         </div>
     </div>
 </section>
-<section class="container py-12.5 lg:py-13.5" data-aos="fade-up">
+<section class="container py-12.5 lg:py-25" data-aos="fade-up">
     <b class="section-title">Explorez votre scène culturelle en ligne</b>
     <div id="home-filter" class="flex flex-col gap-8 mt-10 lg:flex-row lg:gap-20">
         <div class="flex overflow-x-auto lg:flex-col">
@@ -137,7 +137,7 @@ function show_cpt()
         </div>
     </div>
 </section>
-<section class="container flex flex-col gap-15 py-25 lg:py-13.5" data-aos="fade-up">
+<section class="container flex flex-col gap-15 py-25 lg:py-25" data-aos="fade-up">
     <b class="text-center uppercase">1 an déjà, nos chiffres clés</b>
 
     <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center">
