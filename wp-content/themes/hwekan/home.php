@@ -168,32 +168,34 @@ function show_cpt()
         </div>
     </div>
 </section>
-<section class="py-25 container flex flex-col gap-15">
-    <div class="h-px bg-gray-500 relative">
-        <div class="absolute left-1/2 -translate-1/2 text-xl w-fit px-6 bg-black">Ils nous font confiance</div>
-    </div>
-    <div class="flex justify-center items-center py-1.5 gap-7.5">
-        <?php
-        $args = array(
-            'post_type' => 'partner',
-            'post_status' => 'publish',
-            'posts_per_page' => -1,
-        );
 
-        $query = new WP_Query($args);
-        if ($query->have_posts()) : ?>
+<?php
+$args = array(
+    'post_type' => 'partner',
+    'post_status' => 'publish',
+    'posts_per_page' => -1,
+);
+
+$query = new WP_Query($args);
+if ($query->have_posts()) : ?>
+    <section class="py-25 container flex flex-col gap-15">
+        <div class="h-px bg-gray-500 relative">
+            <div class="absolute left-1/2 -translate-1/2 text-xl w-fit px-6 bg-black">Ils nous font confiance</div>
+        </div>
+        <div class="flex justify-center items-center py-1.5 gap-7.5">
+
             <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <div class="py-1 px-7.5 bg-white rounded-xl">
                     <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>">
                 </div>
             <?php endwhile; ?>
 
-        <?php
-        endif;
-        wp_reset_postdata();
-        ?>
-    </div>
-</section>
+        </div>
+    </section>
+<?php
+endif;
+wp_reset_postdata();
+?>
 <section class="py-25 bg-[#F1E9D5] max-lg:px-4">
     <div class="container bg-black rounded-[40px] flex flex-col items-center py-15 !px-7 lg:!px-20 gap-10">
         <svg width="230" height="54" viewBox="0 0 230 54" fill="none" xmlns="http://www.w3.org/2000/svg">
