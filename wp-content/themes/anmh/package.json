@@ -1,9 +1,0 @@
-{
-	"scripts": {
-		"dev": "pnpm tailwindcss -i ./src/style.css -o ./tailwindcss.css --watch"
-	},
-	"dependencies": {
-		"tailwindcss": "^4.0.14",
-		"@tailwindcss/cli": "^4.0.14"
-	}
-}
