@@ -421,6 +421,12 @@
   .max-w-full {
     max-width: 100%;
   }
+  .min-w-45 {
+    min-width: calc(var(--spacing) * 45);
+  }
+  .min-w-45\.5 {
+    min-width: calc(var(--spacing) * 45.5);
+  }
   .flex-1 {
     flex: 1;
   }
@@ -1081,6 +1087,11 @@
   .lg\:gap-6 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 6);
+    }
+  }
+  .lg\:gap-9\.5 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 9.5);
     }
   }
   .lg\:gap-10 {

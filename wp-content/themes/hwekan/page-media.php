@@ -67,15 +67,15 @@ function show_cpt()
         case "portrait":
         ?>
             <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-10 last:border-b md:border-t border-gray-200">
-                <div class="w-45.5 h-58.5 relative max-md:w-full">
+                <div class="w-45.5 min-w-45.5 h-58.5 relative max-md:w-full">
                     <img class="w-full h-full object-cover" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" />
                 </div>
-                <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-4 flex-1">
                     <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
                     <b class="text-xl">
                         <?php the_title() ?>
                     </b>
-                    <div class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-6 lg:gap-9.5">
                         <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
 
                         <div class="flex gap-3.5">
