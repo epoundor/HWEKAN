@@ -19,6 +19,10 @@ body:has(#menu:checked) {
   display: none;
 }
 
+figure img {
+  width: 100%;
+  height: auto;
+}
 figcaption{
   @apply italic text-[#565656] uppercase text-right text-xs;
 }

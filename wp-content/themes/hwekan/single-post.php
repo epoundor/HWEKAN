@@ -34,11 +34,28 @@
                     <?= get_the_date("d/m/Y") ?>
                 </div>
             </div>
-            <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-4 lg:gap-6">
                 <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="h-49.5">
                 <span class="italic text-[#565656] uppercase text-right text-xs"> Crédit photo: <?= get_the_post_thumbnail_caption() ?> </span>
             </div>
             <?php the_content() ?>
+
+            <div class="flex gap-2 py-6 items-center lg:ml-auto">
+                <b class="font-medium text-[#555555]">Partagez cet article :</b>
+                <div class="flex gap-4">
+                    <a target="popup" onclick='window.open("https://www.linkedin.com/sharing/share-offsite/?url=<?= get_the_permalink() ?>" ,"popup" ,"width=550,height=450"); return false;' class="flex justify-center items-center rounded-full cursor-pointer">
+                        <?= icon("linkedin") ?>
+                    </a>
+
+                    <a target="popup" class="flex justify-center items-center rounded-full cursor-pointer">
+                        <?= icon("instagram") ?>
+                    </a>
+                    <a target="popup" onclick='window.open("https://www.facebook.com/share.php?u=<?= get_the_permalink() ?>","popup","width=550,height=450"); return false;' class="flex justify-center items-center rounded-full cursor-pointer">
+                        <?= icon("facebook") ?>
+                    </a>
+
+                </div>
+            </div>
         </div>
     </div>
 </main>
