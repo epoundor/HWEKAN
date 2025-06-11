@@ -77,7 +77,7 @@ function show_cpt()
                         <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
 
                         <div class="flex gap-3.5">
-                            <a target="_blank" class="py-3 px-10 max-md:flex-1 border text-center text-sm font-semibold" href="<?= get_the_post_thumbnail_url() ?>">Découvrir</a>
+                            <a target="_blank" class="py-3 px-10 max-md:flex-1 border text-center text-sm font-semibold" href="<?= get_the_permalink() ?>">Découvrir</a>
                         </div>
                     </div>
                 </div>
