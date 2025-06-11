@@ -217,9 +217,6 @@
   .-top-3 {
     top: calc(var(--spacing) * -3);
   }
-  .-top-22 {
-    top: calc(var(--spacing) * -22);
-  }
   .-top-22\.5 {
     top: calc(var(--spacing) * -22.5);
   }
@@ -235,9 +232,6 @@
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
-  .bottom-3 {
-    bottom: calc(var(--spacing) * 3);
-  }
   .bottom-3\.5 {
     bottom: calc(var(--spacing) * 3.5);
   }
@@ -246,9 +240,6 @@
   }
   .left-0 {
     left: calc(var(--spacing) * 0);
-  }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
   }
   .left-1\/2 {
     left: calc(1/2 * 100%);
@@ -289,9 +280,6 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
-  .mb-7 {
-    margin-bottom: calc(var(--spacing) * 7);
-  }
   .mb-7\.5 {
     margin-bottom: calc(var(--spacing) * 7.5);
   }
@@ -328,9 +316,6 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
-  .h-13 {
-    height: calc(var(--spacing) * 13);
-  }
   .h-13\.75 {
     height: calc(var(--spacing) * 13.75);
   }
@@ -340,14 +325,8 @@
   .h-27 {
     height: calc(var(--spacing) * 27);
   }
-  .h-49 {
-    height: calc(var(--spacing) * 49);
-  }
   .h-49\.5 {
     height: calc(var(--spacing) * 49.5);
-  }
-  .h-53 {
-    height: calc(var(--spacing) * 53);
   }
   .h-53\.75 {
     height: calc(var(--spacing) * 53.75);
@@ -370,23 +349,14 @@
   .\!w-full {
     width: 100% !important;
   }
-  .w-10 {
-    width: calc(var(--spacing) * 10);
-  }
   .w-10\/12 {
     width: calc(10/12 * 100%);
   }
   .w-15 {
     width: calc(var(--spacing) * 15);
   }
-  .w-63 {
-    width: calc(var(--spacing) * 63);
-  }
   .w-63\.75 {
     width: calc(var(--spacing) * 63.75);
-  }
-  .w-64 {
-    width: calc(var(--spacing) * 64);
   }
   .w-64\.5 {
     width: calc(var(--spacing) * 64.5);
@@ -409,21 +379,9 @@
   .flex-1 {
     flex: 1;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    --tw-translate-y: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .-translate-x-1\/2 {
@@ -438,9 +396,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .appearance-none {
     appearance: none;
@@ -495,9 +450,6 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
-  }
-  .gap-7 {
-    gap: calc(var(--spacing) * 7);
   }
   .gap-7\.5 {
     gap: calc(var(--spacing) * 7.5);
@@ -601,10 +553,6 @@
     --tw-gradient-position: to top in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .from-black {
-    --tw-gradient-from: var(--color-black);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
   .from-black\/40 {
     --tw-gradient-from: color-mix(in oklab, var(--color-black) 40%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -640,9 +588,6 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
-  .p-3 {
-    padding: calc(var(--spacing) * 3);
-  }
   .p-3\.5 {
     padding: calc(var(--spacing) * 3.5);
   }
@@ -651,9 +596,6 @@
   }
   .p-7 {
     padding: calc(var(--spacing) * 7);
-  }
-  .p-13 {
-    padding: calc(var(--spacing) * 13);
   }
   .p-13\.5 {
     padding: calc(var(--spacing) * 13.5);
@@ -675,9 +617,6 @@
   }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
-  }
-  .px-7 {
-    padding-inline: calc(var(--spacing) * 7);
   }
   .px-7\.5 {
     padding-inline: calc(var(--spacing) * 7.5);
@@ -718,14 +657,8 @@
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
   }
-  .py-12 {
-    padding-block: calc(var(--spacing) * 12);
-  }
   .py-12\.5 {
     padding-block: calc(var(--spacing) * 12.5);
-  }
-  .py-13 {
-    padding-block: calc(var(--spacing) * 13);
   }
   .py-13\.5 {
     padding-block: calc(var(--spacing) * 13.5);
@@ -733,26 +666,14 @@
   .py-15 {
     padding-block: calc(var(--spacing) * 15);
   }
-  .py-18 {
-    padding-block: calc(var(--spacing) * 18);
-  }
-  .py-18\.75 {
-    padding-block: calc(var(--spacing) * 18.75);
-  }
   .py-25 {
     padding-block: calc(var(--spacing) * 25);
   }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
-  .pb-3 {
-    padding-bottom: calc(var(--spacing) * 3);
-  }
   .pb-3\.5 {
     padding-bottom: calc(var(--spacing) * 3.5);
-  }
-  .pb-10 {
-    padding-bottom: calc(var(--spacing) * 10);
   }
   .pb-10\.5 {
     padding-bottom: calc(var(--spacing) * 10.5);
@@ -816,10 +737,6 @@
     --tw-leading: calc(var(--spacing) * 120);
     line-height: calc(var(--spacing) * 120);
   }
-  .leading-150 {
-    --tw-leading: calc(var(--spacing) * 150);
-    line-height: calc(var(--spacing) * 150);
-  }
   .leading-\[150\%\] {
     --tw-leading: 150%;
     line-height: 150%;
@@ -842,9 +759,6 @@
   }
   .text-nowrap {
     text-wrap: nowrap;
-  }
-  .text-wrap {
-    text-wrap: wrap;
   }
   .text-\[\#555555\] {
     color: #555555;
@@ -887,13 +801,6 @@
   }
   .italic {
     font-style: italic;
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .not-last\:border-b {
     &:not(*:last-child) {
@@ -1351,9 +1258,4 @@ svg,button {
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
