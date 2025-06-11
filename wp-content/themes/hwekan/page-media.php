@@ -75,7 +75,7 @@ function show_cpt()
                     <b class="text-xl">
                         <?php the_title() ?>
                     </b>
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-6">
                         <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
 
                         <div class="flex gap-3.5">
