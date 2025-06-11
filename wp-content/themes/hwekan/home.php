@@ -92,11 +92,14 @@ function show_cpt()
     </div>
 </section>
 <section class="container flex flex-col gap-8 py-12.5 lg:py-25" data-aos="fade-up">
-    <b class="section-title">Qui nous sommes ? Ce que nous faisons...</b>
 
     <div class="flex flex-col lg:flex-row lg:gap-12.5 gap-4 items-center">
-        <p class="flex-1 text-lg leading-[150%]">Hwèkan Media est un espace de valorisation, de narration et de documentation des dynamiques créatives béninois. Nous mettons en lumière les talents, les projets et les initiatives qui façonnent nos Industries Culturelles et Créatives (ICC). Ce que nous faisons, c’est de donner à voir tout ce qui mérite mieux qu’un simple coup d’œil.
-        </p>
+        <div class="flex flex-col gap-4 flex-1">
+            <b class="section-title">Qui nous sommes?</b>
+            <p class="text-lg leading-[150%] text-justify">Hwèkan Media est un espace de valorisation, de narration et de documentation des dynamiques créatives béninois. Nous mettons en lumière les talents, les projets et les initiatives qui façonnent nos Industries Culturelles et Créatives (ICC). Ce que nous faisons, c’est de donner à voir tout ce qui mérite mieux qu’un simple coup d’œil.
+            </p>
+        </div>
+
         <div class="py-6 lg:p-11.5 lg:px-8.5 px-4 flex flex-col gap-4 border border-white/50 gradient rounded-xl flex-1">
             <div class="flex justify-between">
                 <span class="text-xl lg:text-3xl font-medium">Hwèkan média</span>
