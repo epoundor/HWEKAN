@@ -66,10 +66,13 @@ function show_cpt()
             ?>
 
 
-<section class="container flex flex-col gap-8 py-12.5 text-center justify-center items-center" data-aos="fade-up">
-    <b class="section-title">Nous faisons la promotion des Industries <br>
-        Culturelles et Créatives (ICC) du Bénin</b>
-    <span class="text-xl text-white/50">Un projet en cours ou en création ? Construisons ensemble son impact culturel et économique.</span>
+<section class="container flex flex-col gap-8 lg:gap-10.5 py-12.5 text-center justify-center items-center" data-aos="fade-up">
+    <div class="flex flex-col gap-4">
+        <b class="section-title">Nous faisons la promotion des Industries <br>
+            Culturelles et Créatives (ICC) du Bénin</b>
+        <span class="text-xl text-white/50">Un projet en cours ou en création ? Construisons ensemble son impact culturel et économique.</span>
+    </div>
+
     <?= button("Lancez-vous maintenant", "", "bg-white hover:bg-primary", "arrow-right") ?>
 
     <div class="relative w-full flex justify-center">
