@@ -39,7 +39,7 @@ function show_cpt()
         <?php
         switch ($type) {
             case "post":
-                article();
+                article("w-full");
                 break;
             case "portrait":
                 portrait();
@@ -113,7 +113,7 @@ function show_cpt()
                 </button>
             <?php endforeach; ?>
         </div>
-        <div class="flex overflow-x-auto gap-10 lg:flex-1">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto lg:gap-10 lg:flex-1">
             <?php
             foreach ($categories as $key => $category) {
                 $args = array(
