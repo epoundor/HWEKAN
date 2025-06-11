@@ -82,16 +82,14 @@ function show_cpt()
                     </div>
                 </div>
             </div>
-    <?php
+<?php
             break;
         default:
             echo "";
             break;
     }
-    ?>
-    </div> <?php
-        }
-            ?>
+}
+?>
 <section class="relative h-76 bg-center bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
     <div class="absolute inset-0 py-13.5 bg-black/74 flex flex-col gap-10 overflow-hidden container lg:items-center">
         <h1 class="text-4xl font-bold text-center">
