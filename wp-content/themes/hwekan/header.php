@@ -51,11 +51,11 @@
             </div>
         </div>
     </header>
-    <div class="fixed hidden md:flex py-3 px-6  flex-col gap-4 bg-white right-0 top-175 text-[#CA390B] z-20">
-        <?= icon("linkedin") ?>
-        <?= icon("instagram") ?>
-        <?= icon("facebook") ?>
-    </div>
+    <!-- <div class="fixed hidden md:flex py-3 px-6  flex-col gap-4 bg-white right-0 top-175 text-[#CA390B] z-20">
+            <?= icon("linkedin") ?>
+            <?= icon("instagram") ?>
+            <?= icon("facebook") ?>
+        </div> -->
     <main>
 
 </body>

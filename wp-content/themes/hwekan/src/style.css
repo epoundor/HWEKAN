@@ -19,12 +19,21 @@ body:has(#menu:checked) {
   display: none;
 }
 
+figcaption{
+  @apply italic text-[#565656] uppercase text-right text-xs;
+}
 body.customize-support{
   margin-top: 46px;
 }
 
 .container {
   max-width: 1240px;
+  margin: 0 auto;
+  @apply px-4 xl:px-0;
+}
+
+.additionnal_container {
+  max-width: 1140px;
   margin: 0 auto;
   @apply px-4 xl:px-0;
 }

@@ -1,5 +1,6 @@
 @theme {
   --color-primary: #FF9500;
+  --font-lora: 'Lora', serif;
 }
 
 .text-black{
