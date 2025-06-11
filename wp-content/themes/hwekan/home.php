@@ -76,7 +76,7 @@ function show_cpt()
     <?= button("Lancez-vous maintenant", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
 
     <div class="relative w-full flex justify-center">
-        <video class="relative aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="https://cdn-front.freepik.com/revamp/temp/hero/v1-loop-poster.webp" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
+        <video class="relative z-10 aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="https://cdn-front.freepik.com/revamp/temp/hero/v1-loop-poster.webp" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
             <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-AnonymousHome1920x1080-compressed.webm" type="video/webm">
             <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-Anonymoushome1920x1080-compressed.mp4" type="video/mp4">
         </video>
