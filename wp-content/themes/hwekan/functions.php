@@ -2,7 +2,14 @@
 require_once 'inc/menu.php';
 require_once 'inc/acf-fields.php';
 require_once 'inc/components.php';
-// require_once 'inc/model-component.php';
+require_once 'inc/portrait-post-type.php';
+require_once 'inc/documentation-post-type.php';
+require_once 'inc/interview-post-type.php';
+require_once 'inc/agenda-post-type.php';
+require_once 'inc/opportunity-post-type.php';
+require_once 'inc/partner-post-type.php';
+
+require_once 'inc/model-component.php';
 
 ini_set('display_errors', '0');
 define('WP_DEBUG_DISPLAY', false);
@@ -38,8 +45,12 @@ add_action('after_setup_theme', 'hwekan_theme_supports');
 
 function hwekan_custom_post_type()
 {
-    // EventPostType::manage();
-    // MarketPostType::manage();
+    PortraitPostType::manage();
+    DocumentationPostType::manage();
+    InterviewPostType::manage();
+    PartnerPostType::manage();
+    AgendaPostType::manage();
+    OpportunityPostType::manage();
 }
 
 function hwekan_init()
@@ -83,3 +94,74 @@ if (function_exists('acf_add_options_page')) {
         'position'      => 2
     ));
 }
+
+add_action('rest_api_init', function () {
+    register_rest_route('hwekan', '/filters', [
+        'methods' => 'GET',
+        'callback' => function ($req) {
+            $slug = $req['slug'];
+            $args = [
+                'post_type' => $slug,
+                'post_status' => 'publish',
+                'posts_per_page' => 3,
+            ];
+            $posts = get_posts($args);
+            return array_map(function ($p) {
+                $fields = function_exists('get_fields') ? get_fields($p->ID) : [];
+                // Image à la une
+                $featured_image = get_the_post_thumbnail_url($p->ID, 'full');
+                // Taxonomies associées
+                $taxonomies = get_object_taxonomies($p->post_type, 'names');
+                $terms = [];
+                foreach ($taxonomies as $tax) {
+                    $terms[$tax] = wp_get_post_terms($p->ID, $tax, ['fields' => 'all']);
+                }
+                return [
+                    'id'              => $p->ID,
+                    'slug'            => $p->post_name,
+                    // 'type'            => $p->post_type,
+                    'title'           => get_the_title($p),
+                    // 'content'         => apply_filters('the_content', $p->post_content),
+                    'excerpt'         => get_the_excerpt($p),
+                    'date'            => $p->post_date,
+                    // 'modified'        => $p->post_modified,
+                    // 'status'          => $p->post_status,
+                    'author'          => get_the_author_meta('display_name', $p->post_author),
+                    'featured_image'  => $featured_image,
+                    'acf'             => $fields,
+                    // 'taxonomies'      => $terms,
+                    // 'meta'            => get_post_meta($p->ID),
+                ];
+            }, $posts);
+        }
+    ]);
+});
+
+
+// Constants
+$GLOBALS['menus'] = [
+    [
+        "label" => "Parutions",
+        "slug" => "post"
+    ],
+    [
+        "label" => "Opportunités",
+        "slug" => "opportunity"
+    ],
+    [
+        "label" => "Interviews",
+        "slug" => "interview"
+    ],
+    [
+        "label" => "Agenda culturel",
+        "slug" => "agenda"
+    ],
+    [
+        "label" => "Documentations",
+        "slug" => "documentation"
+    ],
+    [
+        "label" => "Portraits",
+        "slug" => "portrait"
+    ],
+];

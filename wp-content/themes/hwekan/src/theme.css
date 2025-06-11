@@ -1,3 +1,7 @@
 @theme {
   --color-primary: #FF9500;
 }
+
+.text-black{
+  @apply text-black
+}

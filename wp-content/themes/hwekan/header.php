@@ -19,15 +19,13 @@
                 <img class="w-full h-full" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
             </a>
             <div class="flex gap-10">
-                <?php
-                if (has_nav_menu('primary-menu')) {
-                    wp_nav_menu(array(
-                        "theme_location" => 'primary-menu',
-                        "container" => "",
-                        "items_wrap" => '<ul class="lg:flex hidden header-nav">%3$s</ul>'
-                    ));
-                }
-                ?>
+                <ul class="lg:flex hidden header-nav">
+                    <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
+                        <a class="menu-item hover:text-primary hover:underline" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
+                    <?php endforeach; ?>
+                </ul>
+
+
                 <?= button("Contactez-nous", "", "bg-primary hidden lg:flex") ?>
             </div>
 

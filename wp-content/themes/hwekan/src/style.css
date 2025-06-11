@@ -19,6 +19,10 @@ body:has(#menu:checked) {
   display: none;
 }
 
+body.customize-support{
+  margin-top: 46px;
+}
+
 .container {
   max-width: 1240px;
   margin: 0 auto;
@@ -33,7 +37,7 @@ section {
   max-width: 100dvw;
 }
 
-svg {
+svg,button {
   cursor: pointer;
 }
 
@@ -43,4 +47,15 @@ svg {
 }
 .gradient {
   background: linear-gradient(180deg, #191100 0%, rgba(9, 10, 17, 0) 100%);
+}
+
+#home-filter .active {
+  @apply bg-white/10 text-white font-bold;
+}
+
+.stroke {
+    -webkit-text-fill-color: transparent;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: inherit;
 }
