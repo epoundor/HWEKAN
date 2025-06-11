@@ -20,78 +20,75 @@ function human_filesize($bytes, $decimals = 2)
 function show_cpt()
 {
     $type = get_post_type();
+
+    switch ($type) {
+        case "post":
+            article("!w-full");
+            break;
+        case "opportunity":
+            opportunity("!w-full");
+            break;
+        case "interview":
+            interview("!w-full");
+            break;
+        case "agenda":
+            agenda("!w-full");
+            break;
+        case "documentation":
+            $file = get_field("file");
+            if ($file) {
+                $file_url = $file['url'];
+                $file_size = $file['filesize'];
+            } else {
+                $file_url = '';
+                $file_size = '';
+            }
 ?>
-    <div
-        data-aos="fade">
-        <?php
-        switch ($type) {
-            case "post":
-                article("!w-full");
-                break;
-            case "opportunity":
-                opportunity("!w-full");
-                break;
-            case "interview":
-                interview("!w-full");
-                break;
-            case "agenda":
-                agenda("!w-full");
-                break;
-            case "documentation":
-                $file = get_field("file");
-                if ($file) {
-                    $file_url = $file['url'];
-                    $file_size = $file['filesize'];
-                } else {
-                    $file_url = '';
-                    $file_size = '';
-                }
-        ?>
-                <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-4 not-last:border-b md:border-t border-gray-200">
-                    <?php documentation("max-md:w-full") ?>
-                    <div class="flex flex-col gap-4">
-                        <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
-                        <b class="text-xl">
-                            <?php the_title() ?>
-                        </b>
-                        <div class="flex flex-col gap-3">
-                            <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
-                            <div class="flex gap-2 text-xs"><span>PDF</span> <span>|</span> <?= human_filesize($file_size) ?> </div>
+            <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-4 not-last:border-b md:border-t border-gray-200">
+                <?php documentation("max-md:w-full") ?>
+                <div class="flex flex-col gap-4">
+                    <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
+                    <b class="text-xl">
+                        <?php the_title() ?>
+                    </b>
+                    <div class="flex flex-col gap-3">
+                        <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
+                        <div class="flex gap-2 text-xs"><span>PDF</span> <span>|</span> <?= human_filesize($file_size) ?> </div>
 
-                            <div class="flex gap-3.5">
-                                <a target="_blank" class="py-3 px-4 max-md:flex-1 border text-center text-sm font-semibold" href="<?= $file_url ?>">Lire</a>
-                                <a download class="py-3 px-4 max-md:flex-1 bg-white text-center text-black text-sm font-semibold" href="<?= $file_url ?>">Télécharger</a>
-                            </div>
+                        <div class="flex gap-3.5">
+                            <a target="_blank" class="py-3 px-4 max-md:flex-1 border text-center text-sm font-semibold" href="<?= $file_url ?>">Lire</a>
+                            <a download class="py-3 px-4 max-md:flex-1 bg-white text-center text-black text-sm font-semibold" href="<?= $file_url ?>">Télécharger</a>
                         </div>
                     </div>
                 </div>
-            <?php
-                break;
-            case "portrait":
-            ?>
-                <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-10 not-last:border-b md:border-t border-gray-200">
-                    <img class="w-65 aspect-[65/90] relative max-md:w-full" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" />
-                    <div class="flex flex-col gap-4">
-                        <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
-                        <b class="text-xl">
-                            <?php the_title() ?>
-                        </b>
-                        <div class="flex flex-col gap-3">
-                            <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
+            </div>
+        <?php
+            break;
+        case "portrait":
+        ?>
+            <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-10 not-last:border-b md:border-t border-gray-200">
+                <img class="w-65 aspect-[65/90] relative max-md:w-full" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" />
+                <div class="flex flex-col gap-4">
+                    <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
+                    <b class="text-xl">
+                        <?php the_title() ?>
+                    </b>
+                    <div class="flex flex-col gap-3">
+                        <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
 
-                            <div class="flex gap-3.5">
-                                <a target="_blank" class="py-3 px-10 max-md:flex-1 border text-center text-sm font-semibold" href="<?= get_the_post_thumbnail_url() ?>">Découvrir</a>
-                            </div>
+                        <div class="flex gap-3.5">
+                            <a target="_blank" class="py-3 px-10 max-md:flex-1 border text-center text-sm font-semibold" href="<?= get_the_post_thumbnail_url() ?>">Découvrir</a>
                         </div>
                     </div>
                 </div>
-        <?php
-                break;
-            default:
-                echo "";
-                break;
-        }
-        ?>
+            </div>
+    <?php
+            break;
+        default:
+            echo "";
+            break;
+    }
+    ?>
     </div> <?php
         }
             ?>
@@ -126,7 +123,7 @@ function show_cpt()
         </form>
     </div>
 </section>
-<section class="container py-15 flex flex-col gap-6">
+<section class="container py-15 flex flex-col gap-6" data-aos="fade-up">
     <span class="text-3xl"><?= reset($active_cpt)['label'] ?></span>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <?php
