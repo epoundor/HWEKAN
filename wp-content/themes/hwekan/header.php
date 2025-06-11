@@ -16,7 +16,7 @@
     <header id="header">
         <div class="py-2.5 flex items-center container justify-between">
             <a href="/" class="block">
-                <img class="w-full h-full" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
+                <img class="w-full h-13.75" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
             </a>
             <div class="flex items-center gap-10">
                 <ul class="lg:flex hidden header-nav">
