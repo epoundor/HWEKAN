@@ -36,7 +36,9 @@
             </div>
             <div class="flex flex-col gap-4 lg:gap-6">
                 <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="h-49.5">
-                <span class="italic text-[#565656] uppercase text-right text-xs"> Crédit photo: <?= get_the_post_thumbnail_caption() ?> </span>
+                <?php if (get_the_post_thumbnail_caption()) : ?>
+                    <span class="italic text-[#565656] uppercase text-right text-xs"> Crédit photo: <?= get_the_post_thumbnail_caption() ?> </span>
+                <?php endif; ?>
             </div>
             <?php the_content() ?>
 
