@@ -11,7 +11,7 @@ function article($classes = null)
             <span class="text-primary text-[8px]"><?php the_date("d/m/Y") ?></span>
             <b><?= the_title() ?></b>
         </div>
-        <p class="text-xs font-medium text-black h-17 truncate"><?= get_the_excerpt() ?></p>
+        <p class="text-xs font-medium text-black"><?= get_the_excerpt() ?></p>
         <button class="px-4 py-2.5 text-center text-xs text-primary font-medium rounded border border-gray-200">Lire la suite</button>
     </a>
 <?php
@@ -29,7 +29,7 @@ function interview($classes = null)
             <span class="text-primary text-[8px]"><?php the_date("d/m/Y") ?></span>
             <b><?= the_title() ?></b>
         </div>
-        <p class="text-xs font-medium text-black h-17 truncate"><?= get_the_excerpt() ?></p>
+        <p class="text-xs font-medium text-black"><?= get_the_excerpt() ?></p>
         <button class="px-4 py-2.5 text-center text-xs text-primary font-medium rounded border border-gray-200">Lire la suite</button>
     </a>
 <?php
