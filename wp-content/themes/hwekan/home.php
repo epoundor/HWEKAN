@@ -39,7 +39,7 @@ function show_cpt()
         <?php
         switch ($type) {
             case "post":
-                article("w-full");
+                article("w-full h-full");
                 break;
             case "portrait":
                 portrait();

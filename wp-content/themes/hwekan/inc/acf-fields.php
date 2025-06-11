@@ -61,7 +61,7 @@ function acf_add_option_theme_hwekan_fields()
 
                 array(
                     'key' => 'field_659d4fd1e4bd9',
-                    'label' => 'hwekan Infos',
+                    'label' => 'Hwekan Infos',
                     'name' => '',
                     'type' => 'tab',
                     'instructions' => '',
