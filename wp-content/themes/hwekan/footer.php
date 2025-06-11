@@ -75,7 +75,7 @@ $option_info_instagram = get_field('instagram', 'option');
                 l’actu culturelle du bénin !</span>
             <form class="flex flex-col gap-4">
                 <input type="email" name="email" id="email" class="p-3.5 rounded-lg bg-black/20 focus-within:outline-none" placeholder="Email">
-                <button class="p-4 text-center text-sm font-bold">S’abonner</button>
+                <button class="p-4 bg-black text-white rounded-lg text-center text-sm font-bold">S’abonner</button>
             </form>
         </div>
 
