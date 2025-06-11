@@ -26,7 +26,7 @@
                 </ul>
 
 
-                <?= button("Contactez-nous", "", "bg-primary hidden lg:flex") ?>
+                <?= button("Contactez-nous", "mailto:" . get_field('email', 'option'), "bg-primary hidden lg:flex") ?>
             </div>
 
             <div class="flex gap-5 items-center lg:hidden ">

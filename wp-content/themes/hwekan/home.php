@@ -73,7 +73,7 @@ function show_cpt()
         <span class="text-xl text-white/50">Un projet en cours ou en création ? Construisons ensemble son impact culturel et économique.</span>
     </div>
 
-    <?= button("Lancez-vous maintenant", "", "bg-white hover:bg-primary", "arrow-right") ?>
+    <?= button("Lancez-vous maintenant", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
 
     <div class="relative w-full flex justify-center">
         <video class="relative aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="https://cdn-front.freepik.com/revamp/temp/hero/v1-loop-poster.webp" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
@@ -211,7 +211,7 @@ wp_reset_postdata();
         <span class="text-2xl lg:text-3xl text-center font-medium leading-120">
             Une question, une idée ou juste envie de papoter culture ? <br> Nous sommes là pour ça 👋
         </span>
-        <?php button("Nous sommes à un clic", "", "bg-white hover:bg-primary", "arrow-right") ?>
+        <?php button("Nous sommes à un clic", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
     </div>
 </section>
 
