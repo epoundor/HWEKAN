@@ -37,6 +37,7 @@
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-3xl: 1.5rem;
+    --aspect-video: 16 / 9;
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(
@@ -216,6 +217,12 @@
   .-top-3 {
     top: calc(var(--spacing) * -3);
   }
+  .-top-22 {
+    top: calc(var(--spacing) * -22);
+  }
+  .-top-22\.5 {
+    top: calc(var(--spacing) * -22.5);
+  }
   .top-175 {
     top: calc(var(--spacing) * 175);
   }
@@ -233,6 +240,12 @@
   }
   .bottom-3\.5 {
     bottom: calc(var(--spacing) * 3.5);
+  }
+  .bottom-11 {
+    bottom: calc(var(--spacing) * 11);
+  }
+  .left-0 {
+    left: calc(var(--spacing) * 0);
   }
   .left-1 {
     left: calc(var(--spacing) * 1);
@@ -312,6 +325,9 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
   .h-14 {
     height: calc(var(--spacing) * 14);
   }
@@ -327,8 +343,17 @@
   .h-49\.5 {
     height: calc(var(--spacing) * 49.5);
   }
+  .h-53 {
+    height: calc(var(--spacing) * 53);
+  }
+  .h-53\.75 {
+    height: calc(var(--spacing) * 53.75);
+  }
   .h-76 {
     height: calc(var(--spacing) * 76);
+  }
+  .h-90 {
+    height: calc(var(--spacing) * 90);
   }
   .h-full {
     height: 100%;
@@ -374,6 +399,9 @@
   }
   .w-full {
     width: 100%;
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .flex-1 {
     flex: 1;
@@ -600,6 +628,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-center {
+    object-position: center;
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
@@ -775,6 +806,14 @@
   .text-\[80px\] {
     font-size: 80px;
   }
+  .leading-120 {
+    --tw-leading: calc(var(--spacing) * 120);
+    line-height: calc(var(--spacing) * 120);
+  }
+  .leading-150 {
+    --tw-leading: calc(var(--spacing) * 150);
+    line-height: calc(var(--spacing) * 150);
+  }
   .leading-\[150\%\] {
     --tw-leading: 150%;
     line-height: 150%;
@@ -865,6 +904,13 @@
     &:focus-within {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .hover\:bg-primary {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-primary);
+      }
     }
   }
   .hover\:text-primary {
@@ -1132,7 +1178,7 @@ body.customize-support {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  padding-inline: calc(var(--spacing) * 4);
+  padding-inline: calc(var(--spacing) * 10);
   @media (width >= 80rem) {
     padding-inline: calc(var(--spacing) * 0);
   }
@@ -1140,7 +1186,7 @@ body.customize-support {
 .additionnal_container {
   max-width: 1140px;
   margin: 0 auto;
-  padding-inline: calc(var(--spacing) * 4);
+  padding-inline: calc(var(--spacing) * 10);
   @media (width >= 80rem) {
     padding-inline: calc(var(--spacing) * 0);
   }
@@ -1188,6 +1234,12 @@ svg,button {
       text-decoration-line: underline;
     }
   }
+}
+.leading-120 {
+  line-height: 120%;
+}
+.leading-150 {
+  line-height: 150%;
 }
 @property --tw-translate-x {
   syntax: "*";

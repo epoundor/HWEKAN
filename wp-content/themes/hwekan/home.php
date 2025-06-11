@@ -67,10 +67,26 @@ function show_cpt()
 
 
 <section class="container flex flex-col gap-8 py-12.5 text-center justify-center items-center" data-aos="fade-up">
-    <b class="section-title">Nous faisons la promotion des Industries
+    <b class="section-title">Nous faisons la promotion des Industries <br>
         Culturelles et Créatives (ICC) du Bénin</b>
     <span class="text-xl text-white/50">Un projet en cours ou en création ? Construisons ensemble son impact culturel et économique.</span>
-    <?= button("Lancez-vous maintenant", "", "bg-white", "arrow-right") ?>
+    <?= button("Lancez-vous maintenant", "", "bg-white hover:bg-primary", "arrow-right") ?>
+
+    <div class="relative w-full flex justify-center">
+        <video class="relative aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="https://cdn-front.freepik.com/revamp/temp/hero/v1-loop-poster.webp" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
+            <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-AnonymousHome1920x1080-compressed.webm" type="video/webm">
+            <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-Anonymoushome1920x1080-compressed.mp4" type="video/mp4">
+        </video>
+        <div class="absolute h-90 rounded-3xl overflow-hidden -top-22.5 left-0">
+            <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="360" width="300" alt="">
+        </div>
+        <div class="absolute rounded-3xl overflow-hidden -top-22.5 right-0">
+            <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="157" width="283" alt="">
+        </div>
+        <div class="absolute h-53.75 rounded-3xl overflow-hidden bottom-11 right-0">
+            <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="215" width="176" alt="">
+        </div>
+    </div>
 </section>
 <section class="container flex flex-col gap-8 py-12.5 lg:py-13.5" data-aos="fade-up">
     <b class="section-title">Qui nous sommes ? Ce que nous faisons...</b>
@@ -122,7 +138,7 @@ function show_cpt()
     </div>
 </section>
 <section class="container flex flex-col gap-15 py-25 lg:py-13.5" data-aos="fade-up">
-    <b class="text-center uppercase">Bénin / 1 AN Déjà, <br> NOS chiffres clés</b>
+    <b class="text-center uppercase">1 an déjà, nos chiffres clés</b>
 
     <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center">
         <div class="p-4 flex flex-col text-center">
@@ -184,10 +200,10 @@ function show_cpt()
                 </clipPath>
             </defs>
         </svg>
-        <span class="text-2xl lg:text-3xl text-center font-medium">
-            Une question, une idée ou juste envie de papoter culture ? Nous sommes là pour ça 👋
+        <span class="text-2xl lg:text-3xl text-center font-medium leading-120">
+            Une question, une idée ou juste envie de papoter culture ? <br> Nous sommes là pour ça 👋
         </span>
-        <?php button("Nous sommes à un clic", "", "bg-white", "arrow-right") ?>
+        <?php button("Nous sommes à un clic", "", "bg-white hover:bg-primary", "arrow-right") ?>
     </div>
 </section>
 

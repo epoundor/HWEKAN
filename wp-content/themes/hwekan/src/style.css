@@ -33,13 +33,13 @@ body.customize-support{
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  @apply px-4 xl:px-0;
+  @apply px-10 xl:px-0;
 }
 
 .additionnal_container {
   max-width: 1140px;
   margin: 0 auto;
-  @apply px-4 xl:px-0;
+  @apply px-10 xl:px-0;
 }
 
 img {
@@ -88,4 +88,12 @@ svg,button {
 
 .page a{
   @apply text-primary hover:underline;
+}
+
+.leading-120{
+  line-height: 120%;
+}
+
+.leading-150{
+  line-height: 150%;
 }

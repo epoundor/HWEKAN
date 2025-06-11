@@ -18,7 +18,7 @@
             <a href="/" class="block">
                 <img class="w-full h-full" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
             </a>
-            <div class="flex gap-10">
+            <div class="flex items-center gap-10">
                 <ul class="lg:flex hidden header-nav">
                     <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
                         <a class="menu-item hover:text-primary hover:underline" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
