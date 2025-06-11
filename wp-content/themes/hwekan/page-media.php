@@ -67,7 +67,9 @@ function show_cpt()
         case "portrait":
         ?>
             <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-10 last:border-b md:border-t border-gray-200">
-                <img class="w-65 aspect-[65/90] relative max-md:w-full" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" />
+                <div class="w-45.5 h-58.5 relative max-md:w-full">
+                    <img class="w-full h-full object-cover" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" />
+                </div>
                 <div class="flex flex-col gap-4">
                     <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
                     <b class="text-xl">
