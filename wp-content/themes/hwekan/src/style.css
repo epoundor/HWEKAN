@@ -72,3 +72,20 @@ svg,button {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: inherit;
 }
+
+.page ul {
+  padding-left: 8px;
+}
+
+/* .page p {
+  margin-bottom: 40px;
+} */
+
+.page li {
+  padding-left: 8px;
+  @apply list-disc list-inside;
+}
+
+.page a{
+  @apply text-primary hover:underline;
+}

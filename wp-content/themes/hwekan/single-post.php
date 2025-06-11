@@ -24,8 +24,8 @@
                 <span class="text-sm font-medium inline-block text-gray-500 p-1 truncate"><?= get_the_title() ?></span>
             </a>
         </div>
-        <div class="py-18.75 flex flex-col gap-10">
-            <div class="flex flex-col gap-6 font-lora">
+        <div class="py-18.75 flex flex-col gap-10 page font-lora">
+            <div class="flex flex-col gap-6">
                 <span class="text-[40px] font-semibold"><?php the_title() ?></span>
                 <div class="flex gap-2 text-sm">
                     <span>ARTICLES</span>

@@ -18,7 +18,7 @@ $description = get_field("description");
                     <span class="text-gray-700 text-sm"><?= $job ?></span>
                 </div>
             </div>
-            <div class="lg:w-2/3 lg:pl-10 py-15 lg:pt-0 flex flex-col gap-6 font-lora">
+            <div class="lg:w-2/3 lg:pl-10 py-15 lg:pt-0 flex flex-col gap-6 font-lora page">
                 <div class="flex flex-col gap-2.5">
                     <span class="text-2xl font-bold"><?php the_title() ?></span>
                     <span class="text-sm"><?= $description ?></span>
