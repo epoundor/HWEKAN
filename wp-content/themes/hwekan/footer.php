@@ -63,10 +63,10 @@ $option_info_instagram = get_field('instagram', 'option');
             </a>
         </div>
         <nav>
-            <div class="uppercase font-light py-2 px-4 text-sm">ESPACE MéDIA</div>
+            <!-- <div class="uppercase font-light py-2 px-4 text-sm">ESPACE MéDIA</div> -->
             <ul class="grid grid-cols-2 lg:grid-cols-1">
                 <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
-                    <a class="py-2 px-4 text-sm hover:underline" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
+                    <a class="py-2 px-4 text-sm hover:underline menu-item hover-text-primary" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
                 <?php endforeach; ?>
             </ul>
         </nav>

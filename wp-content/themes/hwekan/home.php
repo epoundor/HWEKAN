@@ -39,7 +39,7 @@ function show_cpt()
         <?php
         switch ($type) {
             case "post":
-                article("w-full h-full");
+                article();
                 break;
             case "portrait":
                 portrait();
@@ -80,13 +80,13 @@ function show_cpt()
             <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-AnonymousHome1920x1080-compressed.webm" type="video/webm">
             <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-Anonymoushome1920x1080-compressed.mp4" type="video/mp4">
         </video>
-        <div class="absolute h-90 rounded-3xl overflow-hidden -top-22.5 left-0">
+        <div class="hero_section h-90 -top-22.5 left-0">
             <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="360" width="300" alt="">
         </div>
-        <div class="absolute rounded-3xl overflow-hidden -top-22.5 right-0">
+        <div class="hero_section -top-22.5 right-0">
             <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="157" width="283" alt="">
         </div>
-        <div class="absolute h-53.75 rounded-3xl overflow-hidden bottom-11 right-0">
+        <div class="hero_section h-53.75 bottom-11 right-0">
             <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="215" width="176" alt="">
         </div>
     </div>
@@ -211,7 +211,7 @@ wp_reset_postdata();
         <span class="text-2xl lg:text-3xl text-center font-medium leading-120">
             Une question, une idée ou juste envie de papoter culture ? <br> Nous sommes là pour ça 👋
         </span>
-        <?php button("Nous sommes à un clic", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
+        <?php button("Nous sommes à un clic", "http://wa.me/22955145377", "bg-white hover:bg-primary w-full md:w-fit", "arrow-right") ?>
     </div>
 </section>
 

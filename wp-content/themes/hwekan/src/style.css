@@ -23,10 +23,10 @@ figure img {
   width: 100%;
   height: auto;
 }
-figcaption{
+figcaption {
   @apply italic text-[#565656] uppercase text-right text-xs;
 }
-body.customize-support{
+body.customize-support {
   margin-top: 46px;
 }
 
@@ -50,9 +50,11 @@ section {
   max-width: 100dvw;
 }
 
-svg,button {
+svg,
+button {
   cursor: pointer;
 }
+
 
 .section-title {
   font-size: 32px;
@@ -67,10 +69,10 @@ svg,button {
 }
 
 .stroke {
-    -webkit-text-fill-color: transparent;
-    /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: inherit;
+  -webkit-text-fill-color: transparent;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: inherit;
 }
 
 .page ul {
@@ -86,14 +88,18 @@ svg,button {
   @apply list-disc list-inside;
 }
 
-.page a{
+.page a {
   @apply text-primary hover:underline;
 }
 
-.leading-120{
+.leading-120 {
   line-height: 120%;
 }
 
-.leading-150{
+.leading-150 {
   line-height: 150%;
+}
+
+.hero_section {
+  @apply absolute rounded-3xl overflow-hidden hidden lg:block;
 }

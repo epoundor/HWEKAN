@@ -18,16 +18,13 @@
             <a href="/" class="block">
                 <img class="w-full h-13.75" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
             </a>
-            <div class="flex items-center gap-10">
-                <ul class="lg:flex hidden header-nav">
-                    <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
-                        <a class="menu-item hover:text-primary hover:underline" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
-                    <?php endforeach; ?>
-                </ul>
+            <ul class="lg:flex hidden header-nav">
+                <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
+                    <a class="menu-item hover:text-primary hover:underline" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
+                <?php endforeach; ?>
+            </ul>
 
-
-                <?= button("Contactez-nous", "mailto:" . get_field('email', 'option'), "bg-primary hidden lg:flex") ?>
-            </div>
+            <?= button("Contactez-nous", "mailto:" . get_field('email', 'option'), "bg-primary hover:bg-white hidden lg:flex") ?>
 
             <div class="flex gap-5 items-center lg:hidden ">
 

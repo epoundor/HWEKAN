@@ -44,8 +44,8 @@ function show_cpt()
                 $file_size = '';
             }
 ?>
-            <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-4 not-last:border-b md:border-t border-gray-200">
-                <?php documentation("max-md:w-full") ?>
+            <div class="col-span-full py-8 flex flex-col md:flex-row md:items-center gap-4 last:border-b md:border-t border-gray-200">
+                <?php documentation("md:!w-45.5 min-w-45.5 md:max-w-45.5") ?>
                 <div class="flex flex-col gap-4">
                     <span class="text-[#868686] uppercase text-sm font-semibold">PUBLIÉ LE <?= get_the_date("d M Y") ?></span>
                     <b class="text-xl">
@@ -56,8 +56,8 @@ function show_cpt()
                         <div class="flex gap-2 text-xs"><span>PDF</span> <span>|</span> <?= human_filesize($file_size) ?> </div>
 
                         <div class="flex gap-3.5">
-                            <a target="_blank" class="py-3 px-4 max-md:flex-1 border text-center text-sm font-semibold" href="<?= $file_url ?>">Lire</a>
-                            <a download class="py-3 px-4 max-md:flex-1 bg-white text-center text-black text-sm font-semibold" href="<?= $file_url ?>">Télécharger</a>
+                            <a target="_blank" class="py-3 px-4 max-md:flex-1 border text-center text-sm font-semibold rounded-lg" href="<?= $file_url ?>">Lire</a>
+                            <a download class="py-3 px-4 max-md:flex-1 bg-white text-center text-black text-sm font-semibold rounded-lg" href="<?= $file_url ?>">Télécharger</a>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,8 @@ function show_cpt()
             break;
         case "portrait":
         ?>
-            <div class="col-span-full py-8 flex flex-col md:flex-row items-center gap-10 last:border-b md:border-t border-gray-200">
-                <div class="w-45.5 min-w-45.5 max-w-45.5 h-58.5 relative max-md:w-full">
+            <div class="col-span-full py-8 flex flex-col md:flex-row md:items-center gap-10 last:border-b md:border-t border-gray-200">
+                <div class="md:w-45.5 min-w-45.5 md:max-w-45.5 h-58.5 relative max-md:w-full">
                     <img class="w-full h-full object-cover" src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" />
                 </div>
                 <div class="flex flex-col gap-4 flex-1">
@@ -79,7 +79,7 @@ function show_cpt()
                         <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
 
                         <div class="flex gap-3.5">
-                            <a target="_blank" class="py-3 px-10 max-md:flex-1 border text-center text-sm font-semibold" href="<?= get_the_permalink() ?>">Découvrir</a>
+                            <a class="py-3 px-10 max-md:flex-1 border text-center text-sm font-semibold rounded-lg" href="<?= get_the_permalink() ?>">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -92,22 +92,25 @@ function show_cpt()
     }
 }
 ?>
-<section class="relative h-76 bg-center bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
-    <div class="absolute inset-0 py-13.5 bg-black/74 flex flex-col gap-10 overflow-hidden container lg:items-center">
-        <h1 class="text-4xl font-bold text-center">
-            <?php the_title() ?>
-        </h1>
-        <div class="flex gap-4 overflow-x-auto">
-            <?php
-            foreach ($cpts as $cpt) : ?>
-                <a href="?type=<?= $cpt["slug"] ?>" class="border border-white rounded-lg p-4 block text-nowrap <?= $type === $cpt['slug'] ? 'bg-white text-black' : '' ?>">
-                    <span class="text-xs font-medium"><?= $cpt["label"] ?> </span>
-                </a>
-            <?php
-            endforeach;
-            ?>
+<section class="relative h-76 bg-center bg-contain md:bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
+    <div class="absolute inset-0 bg-black/74">
+        <div class="py-13.5 flex flex-col gap-10 overflow-hidden container lg:items-center">
+            <h1 class="text-4xl font-bold text-center">
+                <?php the_title() ?>
+            </h1>
+            <div class="flex gap-4 overflow-x-auto">
+                <?php
+                foreach ($cpts as $cpt) : ?>
+                    <a href="?type=<?= $cpt["slug"] ?>" class="border border-white rounded-lg p-4 block text-nowrap <?= $type === $cpt['slug'] ? 'bg-white text-black' : '' ?>">
+                        <span class="text-xs font-medium"><?= $cpt["label"] ?> </span>
+                    </a>
+                <?php
+                endforeach;
+                ?>
+            </div>
         </div>
     </div>
+
 </section>
 <section class="py-2 px-4 bg-white">
     <div class="container flex flex-col gap-6 lg:gap-15">
