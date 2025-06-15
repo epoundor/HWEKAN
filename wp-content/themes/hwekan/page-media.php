@@ -4,7 +4,7 @@ get_header();
 $type = $_GET['type'] ?? 'post';
 
 $cpts = $GLOBALS["menus"];
-
+$search = $_GET['search'] ?? '';
 $active_cpt = array_filter($cpts, function ($cpt) use ($type) {
     return $cpt['slug'] === $type;
 });
@@ -115,7 +115,8 @@ function show_cpt()
                 ?>
             </div>
             <form class="pt-3 lg:w-163">
-                <input type="search" name="s" placeholder="Recherchez un contenu" autofocus class="w-full text-white bg-white/40 py-3.5 px-8 rounded-xl focus-visible:outline-none lg:text-xl">
+                <input type="hidden" name="type" value="<?= $type ?>" />
+                <input type="search" value="<?= $search ?>" name="search" placeholder="Recherchez un contenu" autofocus class="w-full text-white bg-white/40 py-3.5 px-8 rounded-xl focus-visible:outline-none lg:text-xl">
             </form>
         </div>
     </div>
@@ -130,6 +131,7 @@ function show_cpt()
             'post_type' => $type,
             'post_status' => 'publish',
             'posts_per_page' => 12,
+            's' => $search,
         ];
         $posts = get_posts($args);
 
