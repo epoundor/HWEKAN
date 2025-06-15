@@ -3,16 +3,15 @@
 function article($classes = null)
 {
 ?>
-    <a href="<?= get_the_permalink() ?>" class="py-6 px-8 flex flex-col gap-5 bg-white w-63.75 h-full rounded-2xl <?= $classes ?>">
-        <div class="h-27">
-            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="w-full h-full object-cover">
+    <a href="<?= get_the_permalink() ?>" class="p-3 flex flex-col gap-4 bg-white h-full w-full rounded-2xl font-lora <?= $classes ?>">
+        <div class="h-40">
+            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="w-full h-full object-cover rounded-[14px]">
         </div>
-        <div class="flex flex-col gap-3 font-bold text-black">
-            <span class="text-primary text-[8px]"><?php the_date("d/m/Y") ?></span>
-            <b><?= the_title() ?></b>
+        <div class="flex flex-col">
+            <b class="text-black text-lg"><?= the_title() ?></b>
+            <p class="font-medium text-[#4A4A68]"><?= get_the_excerpt() ?></p>
         </div>
-        <p class="text-xs font-medium text-black"><?= get_the_excerpt() ?></p>
-        <button class="px-4 py-2.5 text-center text-xs text-primary font-medium rounded border border-gray-200">Lire la suite</button>
+        <button class="px-4 py-3 text-center bg-primary font-medium rounded border border-gray-200">Lire la suite</button>
     </a>
 <?php
 }
@@ -20,17 +19,17 @@ function article($classes = null)
 function interview($classes = null)
 {
 ?>
-    <a href="<?= get_the_permalink() ?>" class="py-6 px-8 flex flex-col gap-5 bg-white w-63.75 h-full rounded-2xl <?= $classes ?>">
-        <div class="h-27 relative">
+
+    <a href="<?= get_the_permalink() ?>" class="p-3 flex flex-col gap-4 bg-white h-full w-full rounded-2xl font-lora <?= $classes ?>">
+        <div class="h-40 relative">
             <div class="py-1 px-2 font-medium text-[10px] bg-white text-black absolute left-1/2 -translate-x-1/2 -top-3">Interview</div>
-            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="w-full h-full object-cover">
+            <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="w-full h-full object-cover rounded-[14px]">
         </div>
-        <div class="flex flex-col gap-3 font-bold text-black">
-            <span class="text-primary text-[8px]"><?php the_date("d/m/Y") ?></span>
-            <b><?= the_title() ?></b>
+        <div class="flex flex-col">
+            <b class="text-black text-lg"><?= the_title() ?></b>
+            <p class="font-medium text-[#4A4A68]"><?= get_the_excerpt() ?></p>
         </div>
-        <p class="text-xs font-medium text-black"><?= get_the_excerpt() ?></p>
-        <button class="px-4 py-2.5 text-center text-xs text-primary font-medium rounded border border-gray-200">Lire la suite</button>
+        <button class="px-4 py-3 text-center bg-primary hover:bg-white font-medium rounded border border-gray-200">Lire la suite</button>
     </a>
 <?php
 }
@@ -49,7 +48,7 @@ function portrait($classes = null)
 function documentation($classes = null)
 {
 ?>
-    <div class="p-7 bg-white w-full rounded-2xl aspect-[131/170] <?= $classes ?>" title="<?= get_the_title() ?>">
+    <div class="p-4.5 bg-white w-full rounded-2xl aspect-[131/170] <?= $classes ?>" title="<?= get_the_title() ?>">
         <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>">
     </div>
 <?php

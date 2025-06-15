@@ -65,6 +65,14 @@ function show_cpt()
         }
             ?>
 
+<?php
+$hero_video = get_field("video", "option");
+$hero_video_poster = get_field("poster", "option");
+
+
+$hero_images = get_field("images", "option");
+
+?>
 
 <section class="container flex flex-col gap-8 lg:gap-10.5 py-12.5 text-center justify-center items-center" data-aos="fade-up">
     <div class="flex flex-col gap-4">
@@ -76,18 +84,18 @@ function show_cpt()
     <?= button("Lancez-vous maintenant", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
 
     <div class="relative w-full flex justify-center">
-        <video class="relative z-10 aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="https://cdn-front.freepik.com/revamp/temp/hero/v1-loop-poster.webp" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
-            <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-AnonymousHome1920x1080-compressed.webm" type="video/webm">
-            <source src="https://cdn-front.freepik.com/revamp/temp/hero/1905-Anonymoushome1920x1080-compressed.mp4" type="video/mp4">
+        <video class="relative hero_video z-10 aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="<?= $hero_video_poster ?>" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
+            <source src="<?= $hero_video["url"] ?>" type="<?= $hero_video["mime_type"] ?>">
         </video>
         <div class="hero_section h-90 -top-22.5 left-0">
-            <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="360" width="300" alt="">
+            <img class="h-full object-cover object-center " src="<?= $hero_images[0]["image"] ?>" height="360" width="300" alt="">
         </div>
         <div class="hero_section -top-22.5 right-0">
-            <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="157" width="283" alt="">
+            <img class="h-full object-cover object-center " src="<?= $hero_images[1]["image"] ?>" height="157" width="283" alt="">
         </div>
-        <div class="hero_section h-53.75 bottom-11 right-0">
-            <img class="h-full object-cover object-center " src="https://cdn-front.freepik.com/revamp/temp/hero/v2-top-left.webp?w=304&h=168&f=webp" height="215" width="176" alt="">
+        <div class="hero_section"></div>
+        <div class=" hero_section h-53.75 bottom-11 right-0">
+            <img class="h-full object-cover object-center " src="<?= $hero_images[2]["image"] ?>" height="215" width="176" alt="">
         </div>
     </div>
 </section>
@@ -119,28 +127,37 @@ function show_cpt()
                 </button>
             <?php endforeach; ?>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto lg:gap-10 lg:flex-1">
-            <?php
-            foreach ($categories as $key => $category) {
-                $args = array(
-                    'post_type' => $category['slug'],
-                    'post_status' => 'publish',
-                    'posts_per_page' => 3,
-                );
+        <div class="flex flex-col gap-10 lg:flex-1">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto lg:gap-10">
+                <?php
+                foreach ($categories as $key => $category) {
+                    $args = array(
+                        'post_type' => $category['slug'],
+                        'post_status' => 'publish',
+                        'posts_per_page' => 3,
+                    );
 
-                $query = new WP_Query($args);
-                if ($query->have_posts()) : ?>
-                    <?php while ($query->have_posts()) : $query->the_post(); ?>
-                        <?php show_cpt() ?>
-                    <?php endwhile; ?>
+                    $query = new WP_Query($args);
+                    if ($query->have_posts()) : ?>
+                        <?php while ($query->have_posts()) : $query->the_post(); ?>
+                            <?php show_cpt() ?>
+                        <?php endwhile; ?>
 
-            <?php
-                endif;
-                wp_reset_postdata();
-            }
-            ?>
+                <?php
+                    endif;
+                    wp_reset_postdata();
+                }
+                ?>
 
+            </div>
+            <a id="see-all" href="/media" class="justify-end text-[#D5D5D5] items-center flex gap-1">
+                <span>En savoir plus</span>
+                <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.60017 0.914063L13.8445 6.16069L14.7713 7.0863L13.8457 8.0119L8.59902 13.2585L7.67342 12.3318L12.2648 7.74041L0.804687 7.74041L0.804687 6.43104L12.2648 6.43104L7.67227 1.84081L8.59788 0.914063L8.60017 0.914063Z" fill="#D5D5D5" />
+                </svg>
+            </a>
         </div>
+
     </div>
 </section>
 <section class="container flex flex-col gap-15 py-25 lg:py-25" data-aos="fade-up">
@@ -218,14 +235,13 @@ wp_reset_postdata();
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const filterButtons = document.querySelectorAll('.filter-btn');
+        const seeAllButton = document.querySelector('#see-all');
         const items = document.querySelectorAll('.item');
 
         filterButtons.forEach(btn => {
             btn.addEventListener('click', e => {
                 e.preventDefault();
                 const slug = btn.dataset.slug;
-                console.log(slug, items);
-
                 items.forEach(item => {
                     const categories = item.dataset.postType.split(' ');
                     const match = categories.includes(slug);
@@ -233,12 +249,28 @@ wp_reset_postdata();
                 });
                 filterButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+                seeAllButton.href = `${window.location.origin}/media?type=${slug}`;
             });
         });
         items.forEach(item => {
             const categories = item.dataset.postType.split(' ');
             const match = categories.includes("post");
             item.style.display = match ? 'block' : 'none';
+        });
+    });
+</script>
+<script>
+    const images = document.querySelectorAll('.hero_section');
+    const video = document.querySelector('.hero_video');
+    window.addEventListener('scroll', () => {
+        const sc = window.scrollY;
+
+        if (video.scrollHeight > sc)
+            video.style.width = `${757 + sc}px`;
+        images.forEach((image, index) => {
+            const speed = 0.5 * ((-1) ** index)
+            const offset = sc * speed;
+            image.style.transform = `translateX(${-offset}px)`;
         });
     });
 </script>

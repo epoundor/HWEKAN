@@ -55,9 +55,15 @@ function show_cpt()
                         <p class="text-sm font-medium"><?= get_the_excerpt() ?></p>
                         <div class="flex gap-2 text-xs"><span>PDF</span> <span>|</span> <?= human_filesize($file_size) ?> </div>
 
-                        <div class="flex gap-3.5">
-                            <a target="_blank" class="py-3 px-4 max-md:flex-1 border text-center text-sm font-semibold rounded-lg" href="<?= $file_url ?>">Lire</a>
-                            <a download class="py-3 px-4 max-md:flex-1 bg-white text-center text-black text-sm font-semibold rounded-lg" href="<?= $file_url ?>">Télécharger</a>
+                        <div class="flex gap-3.5 md:grid grid-cols-2 md:w-75">
+                            <a target="_blank" class="py-3 px-4 max-md:flex-1 border text-center text-sm font-semibold rounded-lg flex gap-2 justify-center items-center" href="<?= $file_url ?>"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.36458 3.8877C5.03125 3.8877 2.18458 5.96103 1.03125 8.8877C2.18458 11.8144 5.03125 13.8877 8.36458 13.8877C11.6979 13.8877 14.5446 11.8144 15.6979 8.8877C14.5446 5.96103 11.6979 3.8877 8.36458 3.8877ZM8.36458 12.221C6.52458 12.221 5.03125 10.7277 5.03125 8.88769C5.03125 7.0477 6.52458 5.55436 8.36458 5.55436C10.2046 5.55436 11.6979 7.0477 11.6979 8.88769C11.6979 10.7277 10.2046 12.221 8.36458 12.221ZM6.36458 8.8877C6.36458 7.78103 7.25792 6.8877 8.36458 6.8877C9.47125 6.8877 10.3646 7.78103 10.3646 8.8877C10.3646 9.99436 9.47125 10.8877 8.36458 10.8877C7.25792 10.8877 6.36458 9.99436 6.36458 8.8877Z" fill="white" />
+                                </svg>
+                                <span>Lire</span></a>
+                            <a download class="py-3 px-4 max-md:flex-1 bg-white text-center text-black text-sm font-semibold rounded-lg flex gap-2 justify-center items-center" href="<?= $file_url ?>"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.8698 7.2207H11.9298C12.5231 7.2207 12.8165 7.9407 12.3965 8.3607L9.33646 11.4207C9.07646 11.6807 8.65646 11.6807 8.39646 11.4207L5.33646 8.3607C4.91646 7.9407 5.21646 7.2207 5.80979 7.2207H6.86979V3.88737C6.86979 3.5207 7.16979 3.2207 7.53646 3.2207H10.2031C10.5698 3.2207 10.8698 3.5207 10.8698 3.88737V7.2207ZM4.86979 14.554C4.50313 14.554 4.20312 14.254 4.20312 13.8874C4.20312 13.5207 4.50313 13.2207 4.86979 13.2207H12.8698C13.2365 13.2207 13.5365 13.5207 13.5365 13.8874C13.5365 14.254 13.2365 14.554 12.8698 14.554H4.86979Z" fill="black" />
+                                </svg>
+                                <span>Télécharger</span></a>
                         </div>
                     </div>
                 </div>
@@ -92,40 +98,30 @@ function show_cpt()
     }
 }
 ?>
-<section class="relative h-76 bg-center bg-contain md:bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
+<section class="relative h-90.5 bg-center bg-contain md:bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
     <div class="absolute inset-0 bg-black/74">
-        <div class="py-13.5 flex flex-col gap-10 overflow-hidden container lg:items-center">
+        <div class="py-13 flex flex-col gap-10 overflow-hidden container lg:items-center">
             <h1 class="text-4xl font-bold text-center">
                 <?php the_title() ?>
             </h1>
-            <div class="flex gap-4 overflow-x-auto">
+            <div class="flex gap-4 overflow-x-auto justify-center">
                 <?php
                 foreach ($cpts as $cpt) : ?>
-                    <a href="?type=<?= $cpt["slug"] ?>" class="border border-white rounded-lg p-4 block text-nowrap <?= $type === $cpt['slug'] ? 'bg-white text-black' : '' ?>">
+                    <a href="?type=<?= $cpt["slug"] ?>" class="border border-white rounded-lg p-4 block hover:bg-white hover:text-black text-nowrap <?= $type === $cpt['slug'] ? 'bg-white text-black' : '' ?>">
                         <span class="text-xs font-medium"><?= $cpt["label"] ?> </span>
                     </a>
                 <?php
                 endforeach;
                 ?>
             </div>
+            <form class="pt-3 lg:w-163">
+                <input type="search" name="s" placeholder="Recherchez un contenu" autofocus class="w-full text-white bg-white/40 py-3.5 px-8 rounded-xl focus-visible:outline-none lg:text-xl">
+            </form>
         </div>
     </div>
 
 </section>
-<section class="py-2 px-4 bg-white">
-    <div class="container flex flex-col gap-6 lg:gap-15">
-        <a href="/" class="flex items-center gap-2">
-            <svg width="6" height="11" viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5.50156 1.08749C5.34587 0.931444 5.13449 0.84375 4.91406 0.84375C4.69363 0.84375 4.48226 0.931444 4.32656 1.08749L0.501563 4.91249C0.176562 5.23749 0.176562 5.76249 0.501563 6.08749L4.32656 9.91249C4.65156 10.2375 5.17656 10.2375 5.50156 9.91249C5.82656 9.58749 5.82656 9.06249 5.50156 8.73749L2.26823 5.49582L5.50156 2.26249C5.82656 1.93749 5.81823 1.40415 5.50156 1.08749Z" fill="black" />
-            </svg>
-            <span class="text-sm font-medium inline-block text-gray-500 p-1">Accueil</span>
-        </a>
-        <form class="flex gap-2 border-b justify-start items-center pb-3.5 lg:pb-6">
-            <?= icon('search') ?>
-            <input type="search" name="s" autofocus class="w-full text-black focus-visible:outline-none lg:text-xl">
-        </form>
-    </div>
-</section>
+
 <section class="container py-15 flex flex-col gap-6" data-aos="fade-up">
     <span class="text-3xl"><?= reset($active_cpt)['label'] ?></span>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

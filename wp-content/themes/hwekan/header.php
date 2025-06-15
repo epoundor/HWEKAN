@@ -16,11 +16,11 @@
     <header id="header">
         <div class="py-2.5 flex items-center container justify-between">
             <a href="/" class="block">
-                <img class="w-full h-13.75" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
+                <img class="w-full h-7 lg:h-13.75 !object-contain" src="<?= get_field("header_logo", "option") ?>" alt="Logo hwekan">
             </a>
             <ul class="lg:flex hidden header-nav">
                 <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
-                    <a class="menu-item hover:text-primary hover:underline" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
+                    <a class="menu-item hover:text-primary hover:underline truncate" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
                 <?php endforeach; ?>
             </ul>
 
