@@ -82,7 +82,14 @@ $option_info_instagram = get_field('instagram', 'option');
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        window.addEventListener('load', () => {
+            // Initialize AOS (Animate On Scroll) library
+            AOS.init({
+                duration: 800, // Animation duration in milliseconds
+                once: true, // Whether animation should happen only once - while scrolling down
+                mirror: false // Whether elements should animate out while scrolling past them
+            });
+        });
     </script>
     <?= wp_footer() ?>
 </footer>
