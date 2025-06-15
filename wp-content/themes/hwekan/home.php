@@ -74,7 +74,7 @@ $hero_images = get_field("images", "option");
 
 ?>
 
-<section class="container flex flex-col gap-8 lg:gap-10.5 py-12.5 text-center justify-center items-center" data-aos="fade-up">
+<section class="container flex flex-col gap-8 lg:gap-10.5 py-12.5 text-center justify-center items-center">
     <div class="flex flex-col gap-4">
         <b class="section-title">Nous faisons la promotion des Industries <br>
             Culturelles et Créatives (ICC) du Bénin</b>
@@ -83,7 +83,7 @@ $hero_images = get_field("images", "option");
 
     <?= button("Lancez-vous maintenant", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
 
-    <div class="relative w-full flex justify-center">
+    <div class="relative w-full flex justify-center" data-aos="fade-up">
         <video class="relative hero_video z-10 aspect-video w-full max-w-full rounded-3xl object-cover" style="width: 746px;" poster="<?= $hero_video_poster ?>" autoplay muted loop playsinline preload="metadata" fetchpriority="high">
             <source src="<?= $hero_video["url"] ?>" type="<?= $hero_video["mime_type"] ?>">
         </video>
