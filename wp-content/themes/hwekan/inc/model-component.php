@@ -3,11 +3,11 @@
 function article($classes = null)
 {
 ?>
-    <a href="<?= get_the_permalink() ?>" class="p-3 flex flex-col gap-4 bg-white h-full w-full rounded-2xl font-lora <?= $classes ?>">
+    <a href="<?= get_the_permalink() ?>" class="p-3 flex flex-col gap-4 bg-white h-full w-full rounded-2xl <?= $classes ?>">
         <div class="h-40">
             <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="w-full h-full object-cover rounded-[14px]">
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col font-lora flex-1">
             <b class="text-black text-lg"><?= the_title() ?></b>
             <p class="font-medium text-[#4A4A68]"><?= get_the_excerpt() ?></p>
         </div>
@@ -20,12 +20,12 @@ function interview($classes = null)
 {
 ?>
 
-    <a href="<?= get_the_permalink() ?>" class="p-3 flex flex-col gap-4 bg-white h-full w-full rounded-2xl font-lora <?= $classes ?>">
+    <a href="<?= get_the_permalink() ?>" class="p-3 flex flex-col gap-4 bg-white h-full w-full rounded-2xl <?= $classes ?>">
         <div class="h-40 relative">
             <div class="py-1 px-2 font-medium text-[10px] bg-white text-black absolute left-1/2 -translate-x-1/2 -top-3">Interview</div>
             <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>" class="w-full h-full object-cover rounded-[14px]">
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col font-lora flex-1">
             <b class="text-black text-lg"><?= the_title() ?></b>
             <p class="font-medium text-[#4A4A68]"><?= get_the_excerpt() ?></p>
         </div>
