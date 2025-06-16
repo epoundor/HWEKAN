@@ -103,7 +103,7 @@ $hero_images = get_field("images", "option");
 
     <div class="flex flex-col lg:flex-row lg:gap-12.5 gap-4 items-center">
         <div class="flex flex-col gap-4 flex-1">
-            <b class="section-title">Qui nous sommes?</b>
+            <b class="section-title">Qui sommes-nous</b>
             <p class="text-lg leading-[150%] text-justify">Hwèkan Media est un espace de valorisation, de narration et de documentation des dynamiques créatives béninois. Nous mettons en lumière les talents, les projets et les initiatives qui façonnent nos Industries Culturelles et Créatives (ICC). Ce que nous faisons, c’est de donner à voir tout ce qui mérite mieux qu’un simple coup d’œil.
             </p>
         </div>
@@ -113,7 +113,7 @@ $hero_images = get_field("images", "option");
                 <span class="text-xl lg:text-3xl font-medium">Hwèkan média</span>
                 <?= icon("paint-deck") ?>
             </div>
-            <p class="text-white/70">Création de contenus au service des ICC béninoises : arts visuels et vivants, littérature, cinéma, design, mode, artisanat, gastronomie, patrimoine matériel et immatériel, tourisme culturel, design et innovation</p>
+            <p class="text-white/70">Création de contenus au service des ICC béninoises : arts visuels et vivants, littérature, cinéma, design, mode, artisanat, gastronomie, patrimoine matériel et immatériel, tourisme culturel et innovation</p>
         </div>
     </div>
 </section>
@@ -151,7 +151,7 @@ $hero_images = get_field("images", "option");
 
             </div>
             <a id="see-all" href="/media" class="justify-end text-[#D5D5D5] items-center flex gap-1">
-                <span>En savoir plus</span>
+                <span>Voir plus</span>
                 <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.60017 0.914063L13.8445 6.16069L14.7713 7.0863L13.8457 8.0119L8.59902 13.2585L7.67342 12.3318L12.2648 7.74041L0.804687 7.74041L0.804687 6.43104L12.2648 6.43104L7.67227 1.84081L8.59788 0.914063L8.60017 0.914063Z" fill="#D5D5D5" />
                 </svg>
