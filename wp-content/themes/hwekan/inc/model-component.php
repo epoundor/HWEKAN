@@ -11,7 +11,7 @@ function article($classes = null)
             <b class="text-black text-lg"><?= the_title() ?></b>
             <p class="font-medium text-[#4A4A68]"><?= get_the_excerpt() ?></p>
         </div>
-        <button class="px-4 py-3 text-center bg-primary font-medium rounded border border-gray-200">Lire la suite</button>
+        <button class="px-4 py-3 text-center bg-primary hover:bg-white hover:text-primary hover:border-primary font-medium rounded border border-gray-200">Lire la suite</button>
     </a>
 <?php
 }
@@ -29,7 +29,7 @@ function interview($classes = null)
             <b class="text-black text-lg"><?= the_title() ?></b>
             <p class="font-medium text-[#4A4A68]"><?= get_the_excerpt() ?></p>
         </div>
-        <button class="px-4 py-3 text-center bg-primary hover:bg-white font-medium rounded border border-gray-200">Lire la suite</button>
+        <button class="px-4 py-3 text-center bg-primary hover:bg-white hover:text-primary hover:border-primary font-medium rounded border border-gray-200">Lire la suite</button>
     </a>
 <?php
 }
@@ -47,10 +47,12 @@ function portrait($classes = null)
 
 function documentation($classes = null)
 {
+    $file = get_field("file");
+    $file_url = $file ? $file['url'] : '';
 ?>
-    <div class="p-4.5 bg-white w-full rounded-2xl aspect-[131/170] <?= $classes ?>" title="<?= get_the_title() ?>">
+    <a href="<?= $file_url ?>" target="_blank" class="p-4.5 bg-white w-full rounded-2xl aspect-[131/170] <?= $classes ?>" title="<?= get_the_title() ?>">
         <img src="<?= get_the_post_thumbnail_url() ?>" alt="<?= get_the_post_thumbnail_caption() ?>">
-    </div>
+    </a>
 <?php
 }
 
