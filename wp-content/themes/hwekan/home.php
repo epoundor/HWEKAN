@@ -103,7 +103,7 @@ $hero_images = get_field("images", "option");
 
     <div class="flex flex-col lg:flex-row lg:gap-12.5 gap-4 items-center">
         <div class="flex flex-col gap-4 flex-1">
-            <b class="section-title">Qui sommes-nous</b>
+            <b class="section-title">Qui sommes-nous ?</b>
             <p class="text-lg leading-[150%] text-justify">Hwèkan Media est un espace de valorisation, de narration et de documentation des dynamiques créatives béninois. Nous mettons en lumière les talents, les projets et les initiatives qui façonnent nos Industries Culturelles et Créatives (ICC). Ce que nous faisons, c’est de donner à voir tout ce qui mérite mieux qu’un simple coup d’œil.
             </p>
         </div>
@@ -163,7 +163,7 @@ $hero_images = get_field("images", "option");
 <section class="container flex flex-col gap-15 py-25 lg:py-25" data-aos="fade-up">
     <b class="text-center uppercase">1 an déjà, nos chiffres clés</b>
 
-    <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center">
+    <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center justify-between">
         <div class="p-4 flex flex-col text-center">
             <b class="text-[80px] stroke uppercase text-primary">+7000</b>
             <span class="text-xl uppercase">Abonnés de part le monde</span>
@@ -178,11 +178,11 @@ $hero_images = get_field("images", "option");
             <b class="text-[80px] stroke uppercase text-primary">+12</b>
             <span class="text-xl uppercase">évènements couverts</span>
         </div>
-        <div class="h-14 border border-gray-500"></div>
+        <!-- <div class="h-14 border border-gray-500"></div>
         <div class="p-4 flex flex-col text-center">
             <b class="text-[80px] uppercase text-white">4</b>
             <span class="text-xl uppercase">clients fidèles</span>
-        </div>
+        </div> -->
     </div>
 </section>
 
