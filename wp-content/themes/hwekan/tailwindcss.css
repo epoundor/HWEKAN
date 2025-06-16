@@ -570,8 +570,8 @@
   .to-20\% {
     --tw-gradient-to-position: 20%;
   }
-  .bg-contain {
-    background-size: contain;
+  .bg-cover {
+    background-size: cover;
   }
   .bg-fixed {
     background-attachment: fixed;
@@ -976,11 +976,6 @@
     @media (width >= 48rem) {
       border-top-style: var(--tw-border-style);
       border-top-width: 1px;
-    }
-  }
-  .md\:bg-cover {
-    @media (width >= 48rem) {
-      background-size: cover;
     }
   }
   .md\:p-3 {

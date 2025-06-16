@@ -98,7 +98,7 @@ function show_cpt()
     }
 }
 ?>
-<section class="relative h-90.5 bg-center bg-contain md:bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
+<section class="relative h-90.5 bg-center bg-cover bg-no-repeat bg-fixed" style="background-image: url(<?= get_the_post_thumbnail_url() ?>);">
     <div class="absolute inset-0 bg-black/74">
         <div class="py-13 flex flex-col gap-10 overflow-hidden container lg:items-center">
             <h1 class="text-4xl font-bold text-center">
