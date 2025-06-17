@@ -39,7 +39,7 @@ function portrait($classes = null)
 ?>
     <div class="w-full aspect-[65/90] rounded-2xl relative <?= $classes ?>" style="background-image: url('<?= get_the_post_thumbnail_url() ?>'); background-size: cover; background-position: center;">
         <div class="absolute bottom-0 inset-0 flex flex-col justify-end items-center bg-gradient-to-t to-20% from-black/40 to-transparent">
-            <a href="<?= get_the_permalink() ?>" class="w-10/12 bg-white text-black hover:bg-black rounded-lg hover:!text-white py-3 px-6 font-semibold  mb-7.5 text-center">Découvrire</a>
+            <a href="<?= get_the_permalink() ?>" class="w-10/12 bg-white text-black hover:bg-black rounded-lg hover:!text-white py-3 px-6 font-semibold  mb-7.5 text-center">Découvrir</a>
         </div>
     </div>
 <?php
