@@ -2,16 +2,16 @@
 <?php
 $categories = [
     [
-        "label" => "Parutions",
+        "label" => "Parution",
         "slug" => "post"
     ],
     [
-        "label" => "Portraits",
+        "label" => "Portrait",
         "slug" => "portrait"
     ],
 
     [
-        "label" => "Documentations",
+        "label" => "Documentation",
         "slug" => "documentation"
     ],
     [
@@ -19,12 +19,12 @@ $categories = [
         "slug" => "agenda"
     ],
     [
-        "label" => "Opportunités",
+        "label" => "Opportunité",
         "slug" => "opportunity"
     ],
 
     [
-        "label" => "Interviews",
+        "label" => "Interview",
         "slug" => "interview"
     ],
 ];
@@ -78,7 +78,7 @@ $hero_images = get_field("images", "option");
     <div class="flex flex-col gap-4">
         <b class="section-title">Nous faisons la promotion des Industries <br>
             Culturelles et Créatives (ICC) du Bénin</b>
-        <span class="text-xl text-white/50">Un projet en cours ou en création ? Construisons ensemble son impact culturel et économique.</span>
+        <span class="text-xl text-white/50">Un projet en cours ou en création ? <br> Construisons ensemble son impact culturel et économique.</span>
     </div>
 
     <?= button("Lancez-vous maintenant", "http://wa.me/22955145377", "bg-white hover:bg-primary", "arrow-right") ?>
