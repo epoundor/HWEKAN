@@ -20,7 +20,7 @@ function nothing()
     return;
 }
 
-$GLOBALS["VERSION"] = "0.0.6";
+$GLOBALS["VERSION"] = "0.0.7";
 
 function hwekan_theme_scripts()
 {

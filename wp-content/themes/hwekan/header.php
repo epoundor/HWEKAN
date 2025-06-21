@@ -30,22 +30,38 @@
             <div class="flex gap-5 items-center lg:hidden ">
 
                 <label for="menu" class="block text-2xl">
-
                     <?= icon('menu-burger', '') ?>
                 </label>
+                <input type="checkbox" id="menu" class="peer hidden" />
+                <!-- Burger Menu -->
+                <div class="fixed w-screen bg-white inset-0 peer-checked:block hidden z-50">
+                    <div class="bg-black ">
+                        <div class="container py-3.5 px-2.5 flex justify-between">
+                            <a href="/">
+                                <img src="<?= get_field("header_logo", "option") ?>" class="h-6 md:h-7.5 lg:h-auto">
+                            </a>
+                            <label for="menu">
+                                <?= icon('cross', '') ?>
+                            </label>
+                        </div>
+                        <div class="container pb-4 flex justify-between">
+                            <div class="text-white">
+                                <span class="text-xs">Un projet en vue?</span>
+                                <h3 class="font-semibold">Discutons-en !</h3>
+                            </div>
+                            <?= button("Contactez-nous", "mailto:" . get_field('email', 'option'), "bg-primary hover:bg-white flex") ?>
 
-                <!-- Menu -->
-                <div class="peer-checked:block hidden absolute overflow-auto w-full bg-gray-100 h-screen top-full inset-x-0 z-50 py-10 px-4">
-                    <?php
-                    if (has_nav_menu('primary-menu')) {
-                        wp_nav_menu(array(
-                            "theme_location" => 'primary-menu',
-                            "container" => "",
-                            "items_wrap" => '<div class="flex flex-col gap-6 menu-burger">%3$s</div>'
-                        ));
-                    }
-                    ?>
+                        </div>
+                    </div>
+
+                    <div class="py-4 container flex flex-col">
+                        <?php foreach ($GLOBALS['menus'] as $key => $menu) : ?>
+                            <a class="menu-item hover:text-primary hover:underline truncate text-black py-2 font-semibold text-sm" href="/media?type=<?= $menu['slug'] ?>"><?= $menu['label'] ?></a>
+                        <?php endforeach; ?>
+                    </div>
+
                 </div>
+                <!-- Burger Menu end -->
             </div>
         </div>
     </header>
