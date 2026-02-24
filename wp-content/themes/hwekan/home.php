@@ -165,17 +165,17 @@ $hero_images = get_field("images", "option");
 
     <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center justify-between">
         <div class="p-4 flex flex-col text-center">
-            <b class="text-[80px] stroke uppercase text-primary">+7000</b>
+            <b class="text-[80px] stroke uppercase text-primary">+18000</b>
             <span class="text-xl uppercase">Abonnés de part le monde</span>
         </div>
         <div class="h-14 border border-gray-500"></div>
         <div class="p-4 flex flex-col text-center">
-            <b class="text-[80px] uppercase text-white">+70000</b>
+            <b class="text-[80px] uppercase text-white">+90000</b>
             <span class="text-xl uppercase">VUES PAR SEMAINE</span>
         </div>
         <div class="h-14 border border-gray-500"></div>
         <div class="p-4 flex flex-col text-center">
-            <b class="text-[80px] stroke uppercase text-primary">+12</b>
+            <b class="text-[80px] stroke uppercase text-primary">+40</b>
             <span class="text-xl uppercase">évènements couverts</span>
         </div>
         <!-- <div class="h-14 border border-gray-500"></div>
